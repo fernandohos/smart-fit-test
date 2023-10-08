@@ -1,7 +1,7 @@
 export default function ContentHeader() {
   return (
     <header>
-      <h1 className="typography-h1 relative pb-5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-2 after:bg-dark-grey">
+      <h1 className="typography-h1">
         Reabertura <br /> Smart Fit
       </h1>
       <p className="mt-8 text-dark-grey">

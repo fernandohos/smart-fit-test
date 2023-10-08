@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import plugin from 'tailwindcss/plugin';
+
 
 const config: Config = {
   content: [
@@ -25,6 +27,14 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addComponents }) => {
+      addComponents({
+        ".typography-h1": {
+          "@apply text-[2rem] lg:text-[2.5rem] font-bold uppercase text-dark-grey relative pb-5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-2 after:bg-dark-grey": "",
+        },
+      });
+    }),
+  ],
 };
 export default config;
