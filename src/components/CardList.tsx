@@ -14,7 +14,7 @@ export default function Cards() {
       }
     >
       {units &&
-        units.map((card) => <Card {...(card as CardProps)} key={card.id} />)}
+        units.map((card) => <Card {...(card as CardProps)} key={card.id + card.title} />)}
       {units !== null && units.length === 0 && (
         <p className="text-center w-full text-2xl">
           Nenhuma unidade encontrada :/
