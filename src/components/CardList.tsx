@@ -6,10 +6,20 @@ export default function Cards() {
   const { units } = useUnits();
 
   return (
-    <section className="grid auto-rows-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
-      {units && units.map((card) => (
-        <Card {...(card as CardProps)} key={card.id} />
-      ))}
+    <section
+      className={
+        units?.length === 0
+          ? "flex items-center justify-center my-8"
+          : "grid auto-rows-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8"
+      }
+    >
+      {units &&
+        units.map((card) => <Card {...(card as CardProps)} key={card.id} />)}
+      {units !== null && units.length === 0 && (
+        <p className="text-center w-full text-2xl">
+          Nenhuma unidade encontrada :/
+        </p>
+      )}
     </section>
   );
 }
