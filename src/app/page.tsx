@@ -1,3 +1,4 @@
+import Cards from "@components/CardList";
 import ContentHeader from "@components/ContentHeader";
 import Form from "@components/Form";
 import Header from "@components/Header";
@@ -11,6 +12,7 @@ export default function Home() {
         <ContentHeader />
         <Form />
         <Legend />
+        <Cards />
       </main>
     </div>
   );
