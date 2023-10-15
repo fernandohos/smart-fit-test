@@ -4,42 +4,11 @@ import iconHour from "@public/images/icon-hour.png";
 import RadioInput from "./RadioInput";
 import CheckboxInput from "./CheckboxInput";
 import Button from "./Button";
-import { ChangeEvent, FormEvent, useState } from "react";
-import useUnits from "../hooks/useUnits";
-
-type PeriodType = "morning" | "afternoon" | "evening";
-
-type FormDataType = {
-  period: PeriodType;
-  showClosedUnits: boolean;
-};
+import useForm from "../hooks/useForm";
 
 export default function Form() {
-  const { filterUnits } = useUnits();
-  const [formData, setFormData] = useState<FormDataType>({
-    period: "morning",
-    showClosedUnits: false,
-  });
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    console.log("submited: ", formData);
-    filterUnits(formData);
-  }
-
-  function handlePeriodChange(e: ChangeEvent<HTMLInputElement>) {
-    setFormData((prev) => ({
-      ...prev,
-      period: e.target.value as PeriodType,
-    }));
-  }
-
-  function handleCheckboxChange(e: ChangeEvent<HTMLInputElement>) {
-    setFormData((prev) => ({
-      ...prev,
-      showClosedUnits: e.target.value === "on",
-    }));
-  }
+  const { formData, handleSubmit, handlePeriodChange, handleCheckboxChange } =
+    useForm();
 
   return (
     <form
