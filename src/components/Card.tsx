@@ -79,12 +79,13 @@ export default function Card({
         />
       </div>
       <div className="grid grid-cols-2 gap-3">
-        {schedules && schedules.map(({ weekdays, hour }) => (
-          <div key={weekdays}>
-            <p className="font-bold text-dark-grey text-xl">{weekdays}</p>
-            <p className="text-dark-grey">{hour}</p>
-          </div>
-        ))}
+        {schedules &&
+          schedules.map(({ weekdays, hour }) => (
+            <div key={title + weekdays + hour }>
+              <p className="font-bold text-dark-grey text-xl">{weekdays}</p>
+              <p className="text-dark-grey">{hour}</p>
+            </div>
+          ))}
       </div>
     </div>
   );
