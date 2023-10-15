@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss";
-import plugin from 'tailwindcss/plugin';
-
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -10,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "card": "0 0 4px rgba(0, 0, 0, 0.3)",
+      },
       colors: {
         "dark-grey": "#333333",
         "light-grey": "#808080",
@@ -31,7 +33,8 @@ const config: Config = {
     plugin(({ addComponents }) => {
       addComponents({
         ".typography-h1": {
-          "@apply text-[2rem] lg:text-[2.5rem] font-bold uppercase text-dark-grey relative pb-5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-2 after:bg-dark-grey": "",
+          "@apply text-[2rem] lg:text-[2.5rem] font-bold uppercase text-dark-grey relative pb-5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-2 after:bg-dark-grey":
+            "",
         },
       });
     }),
