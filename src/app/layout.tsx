@@ -1,3 +1,4 @@
+import FormProvider from "../contexts/FormContext";
 import UnitsProvider from "../contexts/UnitsContext";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <UnitsProvider>{children}</UnitsProvider>
+        <FormProvider>
+          <UnitsProvider>{children}</UnitsProvider>
+        </FormProvider>
       </body>
     </html>
   );
