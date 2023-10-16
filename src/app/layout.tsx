@@ -17,9 +17,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <FormProvider>
-          <UnitsProvider>{children}</UnitsProvider>
-        </FormProvider>
+        <UnitsProvider>
+          <FormProvider>{children}</FormProvider>
+        </UnitsProvider>
       </body>
     </html>
   );
