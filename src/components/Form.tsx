@@ -5,10 +5,12 @@ import RadioInput from "./RadioInput";
 import CheckboxInput from "./CheckboxInput";
 import Button from "./Button";
 import useForm from "../hooks/useForm";
+import useUnits from "../hooks/useUnits";
 
 export default function Form() {
   const { formData, handleSubmit, handlePeriodChange, handleCheckboxChange } =
     useForm();
+  const { units } = useUnits();
 
   return (
     <form
@@ -54,7 +56,8 @@ export default function Form() {
           label="Exibir unidades fechadas"
         />
         <p>
-          Resultados encontrados: <span className="font-bold text-xl">0</span>
+          Resultados encontrados:{" "}
+          <span className="font-bold text-xl">{units?.length ?? 0}</span>
         </p>
       </div>
       <div className="flex justify-center items-stretch gap-5 flex-col sm:flex-row mt-7">
